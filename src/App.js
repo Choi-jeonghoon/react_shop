@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button, Navbar, Container, Nav, Row, Col } from "react-bootstrap";
-import Product from "./types/product";
-import mockData from "./dev/mockData";
-import { getProductList } from "./apis/productService";
-
+// import Product from "./types/product";
+// import mockData from "./dev/mockData";
+// import { getProductList } from "./apis/productService";
+import useData from "./hooks/useData";
 // const items = [
 //   {
 //     title: "쇼파",
@@ -37,14 +37,15 @@ import { getProductList } from "./apis/productService";
 // });
 
 function App() {
-  const [mockData, setMockData] = useState([]);
+  const { mockData } = useData();
+  // const [mockData, setMockData] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      const res = await getProductList();
-      setMockData(res);
-    })();
-  });
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await getProductList();
+  //     setMockData(res);
+  //   })();
+  // });
 
   return (
     <div className="App">
