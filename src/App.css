@@ -1,8 +1,14 @@
 .main-bg {
   height: 500px;
-  background-image: url("./img/prydumano-design-yOx4oPNUR10-unsplash.jpg");
+  background-image: url("./img/A.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
@@ -24,11 +30,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
