@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy } from "react";
-import Detail from "../components/Detail";
-const Main = lazy(() => import("../components/Main"));
+import Detail from "../pages/Detail";
+const Main = lazy(() => import("../pages/Main"));
 
 const MyRouter = () => {
   return (

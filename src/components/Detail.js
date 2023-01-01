@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { Card, Navbar, Container, Nav } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const Detail = () => {
   const location = useLocation();
@@ -7,16 +7,6 @@ const Detail = () => {
 
   return (
     <div style={{ width: "100%" }}>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Apple</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">clothes</Nav.Link>
-            <Nav.Link href="#pricing">shoes</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
       <Card
         style={{
           display: "flex",

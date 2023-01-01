@@ -10,7 +10,6 @@ function useData() {
       setMockData(res);
     })();
   });
-
   return {
     mockData,
   };
