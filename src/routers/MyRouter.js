@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { lazy } from "react";
+// import { lazy } from "react";
+import Main from "../pages/Main";
 import Detail from "../pages/Detail";
-const Main = lazy(() => import("../pages/Main"));
+import Login from "../pages/Login";
+import SingUp from "../components/SignUp";
 
 const MyRouter = () => {
   return (
@@ -9,6 +11,8 @@ const MyRouter = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SingUp />} />
       </Routes>
     </BrowserRouter>
   );

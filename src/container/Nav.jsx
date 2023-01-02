@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 
-const contaninerNav = () => {
+const ContaninerNav = () => {
+  const navigate = useNavigate();
+
   return (
     <div style={{ textAlign: "center" }}>
       <Navbar bg="dark" variant="dark">
@@ -13,10 +16,18 @@ const contaninerNav = () => {
             <Nav.Link href="#pricing">shoes</Nav.Link>
           </Nav>
         </Container>
-        <Button variant="primary" style={{ margin: 10 }}>
+        <Button
+          onClick={() => navigate("/login")}
+          variant="primary"
+          style={{ margin: 10 }}
+        >
           login
         </Button>
-        <Button variant="primary" style={{ margin: 10 }}>
+        <Button
+          onClick={() => navigate("/signup")}
+          variant="primary"
+          style={{ margin: 10 }}
+        >
           sign up
         </Button>
       </Navbar>
@@ -24,4 +35,4 @@ const contaninerNav = () => {
   );
 };
 
-export default contaninerNav;
+export default ContaninerNav;
