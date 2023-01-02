@@ -1,18 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
-import useData from "../hooks/useData";
 
-function Main() {
-  const { mockData } = useData();
-
-  const navigate = useNavigate();
-
-  const handleDetailButtonClick = (e, item) => {
-    navigate("/detail", {
-      state: item,
-    });
-  };
-
+function Main({ mockData, onDetailButtonClickEvent }) {
   return (
     <>
       <div className="Main_page">
@@ -30,7 +18,7 @@ function Main() {
               <h4>제품명: {item.title}</h4>
               <p>상세설명: {item.description}</p>
               <p>가격: {item.price}</p>
-              <button onClick={(e) => handleDetailButtonClick(e, item)}>
+              <button onClick={(e) => onDetailButtonClickEvent(e, item)}>
                 Detail
               </button>
             </Col>

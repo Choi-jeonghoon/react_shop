@@ -1,8 +1,11 @@
+import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { getProductList } from "../apis/productService";
-import { useState, useEffect } from "react";
 
 function useData() {
   const [mockData, setMockData] = useState([]);
+  // const [page, setPage] = useState(1); //페이지
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -10,8 +13,19 @@ function useData() {
       setMockData(res);
     })();
   });
+
+  const handleDetailButtonClick = useCallback(
+    (e, item) => {
+      navigate("/detail", {
+        state: item,
+      });
+    },
+    [navigate]
+  );
+
   return {
     mockData,
+    handleDetailButtonClick,
   };
 }
 
