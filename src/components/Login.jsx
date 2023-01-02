@@ -18,10 +18,9 @@ const Login = () => {
       style={{
         width: "100%",
         height: "100vh",
-        backgroundColor: "rgba(106, 17, 203, 1)",
       }}
     >
-      <MDBContainer fluid>
+      <MDBContainer>
         <MDBRow className="d-flex justify-content-center align-items-center h-100">
           <MDBCol col="12">
             <MDBCard
@@ -32,7 +31,10 @@ const Login = () => {
                 maxWidth: "100%",
               }}
             >
-              <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
+              <MDBCardBody
+                className="p-5 d-flex flex-column align-items-center mx-auto w-100"
+                style={{ backgroundColor: "rgba(50, 120, 300, 1)" }}
+              >
                 <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
                 <p className="text-white-50 mb-5">
                   Please enter your login and password!
@@ -109,7 +111,7 @@ const Login = () => {
       <Card.Footer>
         <a
           style={{
-            color: "white",
+            color: "black",
             fontSize: "20px",
             display: "flex",
             justifyContent: "center",
