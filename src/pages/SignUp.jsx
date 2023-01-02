@@ -1,8 +1,17 @@
 import React from "react";
-import SingUpPage from "../components/SignUp";
+import SignUpPage from "../components/SignUp";
+import useSignup from "./../hooks/useSignUp";
 
-const Login = () => {
-  return <SingUpPage />;
+const SignUp = () => {
+  const { register, errors, handleSubmit, handleSignUpSubmit } = useSignup();
+
+  return (
+    <SignUpPage
+      register={register}
+      errors={errors}
+      onSignUpSubmitEvent={handleSubmit(handleSignUpSubmit)}
+    />
+  );
 };
 
-export default Login;
+export default SignUp;

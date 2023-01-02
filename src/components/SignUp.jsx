@@ -10,13 +10,16 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 
-const SingUp = () => {
+const SignUp = ({ register, errors, onSignUpSubmitEvent }) => {
+  const { email, firstname, lastname, password } = errors;
+
   return (
-    <div
+    <form
       style={{
         height: "100vh",
         marginTop: "100px",
       }}
+      onSubmit={onSignUpSubmitEvent}
     >
       <MDBContainer>
         <div className="p-5 bg-image"></div>
@@ -37,35 +40,41 @@ const SingUp = () => {
                 <MDBInput
                   wrapperClass="mb-4"
                   label="First name"
-                  id="form1"
+                  id="firstname"
                   type="text"
+                  {...register("firstname")}
                 />
               </MDBCol>
-
+              {firstname?.message && <p>{firstname.message}</p>}
               <MDBCol col="6">
                 <MDBInput
                   wrapperClass="mb-4"
                   label="Last name"
-                  id="form1"
+                  id="lastname"
                   type="text"
+                  {...register("lastname")}
                 />
               </MDBCol>
+              {lastname?.message && <p>{lastname.message}</p>}
             </MDBRow>
 
             <MDBInput
               wrapperClass="mb-4"
               label="Email"
-              id="form1"
+              id="email"
               type="email"
+              {...register("email")}
             />
+            {email?.message && <p>{email.message}</p>}
             <MDBInput
               wrapperClass="mb-4"
               label="Password"
-              id="form1"
+              id="password"
               type="password"
+              {...register("password")}
             />
-
-            <MDBBtn className="w-100 mb-4" size="md">
+            {password?.message && <p>{password.message}</p>}
+            <MDBBtn className="w-100 mb-4" size="md" type="submit">
               sign up
             </MDBBtn>
           </MDBCardBody>
@@ -89,8 +98,8 @@ const SingUp = () => {
           Go back Main
         </a>
       </Card.Footer>
-    </div>
+    </form>
   );
 };
 
-export default SingUp;
+export default SignUp;

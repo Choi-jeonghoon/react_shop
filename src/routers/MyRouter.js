@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "../pages/Main";
 import Detail from "../pages/Detail";
 import Login from "../pages/Login";
-import SingUp from "../components/SignUp";
+import SingUp from "../pages/SignUp";
 
 const MyRouter = () => {
   return (

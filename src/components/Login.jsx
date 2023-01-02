@@ -12,13 +12,16 @@ import {
 } from "mdb-react-ui-kit";
 import { Card } from "react-bootstrap";
 
-const Login = () => {
+const Login = ({ register, errors, onLoginSubmitEvent }) => {
+  const { email, password } = errors;
+
   return (
-    <div
+    <form
       style={{
         width: "100%",
         height: "100vh",
       }}
+      onSubmit={onLoginSubmitEvent}
     >
       <MDBContainer>
         <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -47,7 +50,9 @@ const Login = () => {
                   id="email"
                   type="email"
                   size="lg"
+                  {...register("email")}
                 />
+                {email?.message && <p>{email.message}</p>}
                 <MDBInput
                   wrapperClass="mb-4 mx-5 w-100"
                   labelClass="text-white"
@@ -55,14 +60,21 @@ const Login = () => {
                   id="password"
                   type="password"
                   size="lg"
+                  {...register("password")}
                 />
-
+                {password?.message && <p>{password.message}</p>}
                 <p className="small mb-3 pb-lg-2">
                   <a className="text-white-50" href="#!">
                     Forgot password?
                   </a>
                 </p>
-                <MDBBtn outline className="mx-2 px-5" color="white" size="lg">
+                <MDBBtn
+                  outline
+                  className="mx-2 px-5"
+                  color="white"
+                  size="lg"
+                  type="submit"
+                >
                   Login
                 </MDBBtn>
 
@@ -121,7 +133,7 @@ const Login = () => {
           Go back Main
         </a>
       </Card.Footer>
-    </div>
+    </form>
   );
 };
 

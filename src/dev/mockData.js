@@ -13,5 +13,10 @@ Array.from({ length: 252 })
     mockData.push(obj);
   });
 
+mockData.user = {
+  email: "jei@jei.com",
+  password: "jei1234@",
+};
+
 Object.freeze(mockData);
 export default mockData;
