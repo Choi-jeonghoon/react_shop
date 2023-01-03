@@ -4,8 +4,8 @@ import * as yup from "yup";
 
 const userSignupSchema = yup.object().shape({
   email: yup.string().email("이메일다시").required(),
-  firstname: yup.string().min(4, "4글자이하로").required(),
-  lastname: yup.string().min(4, "4글자이하로").required(),
+  firstname: yup.string().min(4, "4글자이상").required(),
+  lastname: yup.string().min(4, "4글자이상").required(),
   password: yup
     .string()
     .min(8, "패스워드 너무 짧어~")
